@@ -1,0 +1,42 @@
+# Structure and description of the repo
+- `code` ... this folder contains simply all the code used in a project
+  - `analysis_ESM_GMMA.ipynb` ... computes correlation between the given data and creates scatterplots
+  - `analysis_ESM.ipynb` ... creates plots for scores on positions in a protein sequence
+  - `PrismData.py` ... a script needed to run the ESM-1b and ESM-IF run scripts
+  - `run_esm1b_complete.py` ... script to run ESM-1b model
+  - `run_esmIF_complete.py` ... script to run ESM-IF model
+  - `runs_esm1b.sh` ... shows how to run the ESM-1b model with some example runs (need to be checked according to the repo structure before running, the repo structure was changed after its last usage)
+  - `runs_esmif.sh` ... shows how to run the ESM-IF model with some example runs (need to be checked according to the repo structure before running, the repo structure was changed after its last usage)
+  - `score_log_likelihoods.py` ... a script needed to run the ESM-1b and ESM-IF run scripts
+  - `structure_RMSD_pairwise.ipynb` ... configure the path to 2 pdb structures and it will compute their RMSD, if the structures are nice enough (e.g. have the same number of CAs)
+  - `uniprot.py` ... a script needed to run the ESM-1b and ESM-IF run scripts
+- `data` ... all important outputs made during the project
+  - The data are not "complete" in a way, that not all possible combinations of outputs were made, so when doing a research on it, check firs, if you have the data and maybe create your owns
+  - `AF2_structures` ... all AlphaFold2 structures prepared for the project
+    - the structures itself are named like `[name of the protein]_prediction.pdb`, where the [name of the protein] is a name of the protein which sequence was used to make the model
+    - the folder organization gives additional information for it, e.g. template used, MSA options etc.
+    - `AF2_config` ... structures made using the [ColabFold's notebook](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb)
+      - the sub-folders are saying what was used as a template for the prediction and then what MSA type was used
+      - `[template used]` ... either `5J7D` (`input/templates/5j7d.pdb`), `1FB0` (`input/templates/1fb0.pdb`) or `None`
+        - `[MSA configuration]` ... `single_sequence` - no other option chosen...
+          - then the predicted structures are called `[name of protein sequence]_prediction.pdb`
+    - `AF2_orig` ... structures made using only a protein's sequence in the "original" [deepmind's notebook](https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb)
+      - predictions are called `[name of protein sequence]_prediction.pdb`
+  - `ESM_results` ... ESM results made during the project
+    - `ESM-1b` ... results of the ESM-1b model as it is configured on Panum using a script `code/runs_esm1b_complete.py`
+      - `replication` ... the same as the other results, just to check whether the ESM models are deterministic (ESM-1b is, ESM-IF is not)
+      - results for given proteins are called `[protein name]_results.txt`
+    - `ESM-IF`
+      - results of the ESM-IF model as it is configured on Panum using a script `code/runs_esmif_complete.py`
+      - the folder has rich a subfolder structure, which captures which structures were used as the `structure` input to the model
+        - [model used] ... e.g. `AF2_config`, `AF2_orig`
+          - [AF2 sequence input (structure)] ... e.g. `dF106`, `edF106`, `MM9`, `eMM9`, `1fb0`
+            - [MSA configuration] ... e.g. `single_sequence`
+      - `eplication` ... the same as `v4`, just to check whether the ESM models are deterministic (ESM-1b is, ESM-IF is not)
+- `input` ... input data, which were given to the project initially
+  - `sequences` ... sequences used for the model inputs
+    - `InputSequences.md` contains proteins used in a project, their sequences and MSA
+  - `templates` ... templates used as the model inputs
+    - `5j7d.pdb` ... crystal structure of dF106 protein (5J7D is its PDB code)
+    - `1fb0.pdb` ... crystal structure of WT thyoredoxin
+    - `1fb0A.pdb` and `5j7d_last_G_removed.pdb` ... structures made from the previous two in order to compute RMSD on them (see prepared `code/structure_RMSD_pairwise.ipynb`, which was used for the computation)

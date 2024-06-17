@@ -1,0 +1,41 @@
+python3 code/run_esm1b_complete.py \
+--gpunumber [number] \
+--prefix ESM_results/ESM-IF/v2 [output folder] \
+--uniprot [name of the protein] \
+--sequence [original sequence] \
+
+# GFP (UniProt)
+python3 code/run_esm1b_complete.py \
+--gpunumber 8 \
+--prefix data/ESM_results/ESM-1b/v4 \
+--sequence MSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTFSYGVQCFSRYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYIMADKQKNGIKVNFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSALSKDPNEKRDHMVLLEFVTAAGITHGMDELYK
+
+# dF106
+python3 code/run_esm1b_complete.py \
+--gpunumber 8 \
+--prefix data/ESM_results/ESM-1b/v4_replication3 \
+--sequence VLDVTKDHWLLYVLLAQLPVMVLFRKDNDEEAKKVEYIVRELAQEFDGLIMVFELDTNKAPEIAKKYNITTTPTVAFFKNGEDKSVLIGAIPKDQLRDEILKYL
+
+# edF106
+python3 code/run_esm1b_complete.py \
+--gpunumber 8 \
+--prefix data/ESM_results/ESM-1b/v4_replication \
+--sequence VLDVTKDHWLPYVLLAQLPVMVLFRKDNDEEAKKVEYIVRELAQEFDGLIMVFELDTNKAPEIAKKYNITTTPTVAFFKNGEVKSVLIGAIPKDQLRDEILKYL
+
+# MM9
+python3 code/run_esm1b_complete.py \
+--gpunumber 8 \
+--prefix data/ESM_results/ESM-1b/v4_replication \
+--sequence VLDVTKDHWLPYVLLAQLPVMVLFRKDNDEEAKKVEYIVRELAQEFDGLIRVFYVDINKAPEIAKKYNITTTPTVAFFHNGELKSVFTGAITKDQLRDEILKYL
+
+# 1fb0
+python3 code/run_esm1b_complete.py \
+--gpunumber 8 \
+--prefix data/ESM_results/ESM-1b/v4_replication \
+--sequence VQDVNDSSWKEFVLESEVPVMVDFWAPWCGPCKLIAPVIDELAKEYSGKIAVYKLNTDEAPGIATQYNIRSIPTVLFFKNGERKESIIGAVPKSTLTDSIEKYL
+
+# eMM9
+python3 code/run_esm1b_complete.py \
+--gpunumber 8 \
+--prefix data/ESM_results/ESM-1b/v4_replication \
+--sequence VLDVTKDHWLPYVLLAQLPVMVLFRKDNDEEAKKVEYIVRELAQEFDGLIKVFVVDINKAPEIAKKYNITTTPTVAFFKNGELKSVFTGAISKDQLRDEILKYL
