@@ -2,6 +2,8 @@
 - `code` ... this folder contains simply all the code used in a project
   - `analysis_ESM_GMMA.ipynb` ... computes correlation between the given data and creates scatterplots
   - `analysis_ESM.ipynb` ... creates plots for scores on positions in a protein sequence
+  - `BP1-ESM-GMMA_venv_requirements.txt` ... you can use this file to create a virtual environment with all libraries needed for the data analysis. To run the ESM models take a look at `Kristoffers_env.sh`
+  - `Kristoffers_env.sh` ... use when you are on the server and want to use the ESM models. It should work then.
   - `PrismData.py` ... a script needed to run the ESM-1b and ESM-IF run scripts
   - `run_esm1b_complete.py` ... script to run ESM-1b model
   - `run_esmIF_complete.py` ... script to run ESM-IF model
